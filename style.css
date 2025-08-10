@@ -9,7 +9,7 @@ body {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-    visibility: hidden;
+    visibility: hidden; /* Hide body until fully loaded */
 } 
 
 canvas{ 
@@ -60,6 +60,13 @@ canvas{
     display: flex;
     flex-direction: column;
 }
+
+/* Default Window Positions and Sizes */
+#terminal-window { width: 550px; height: 350px; top: 15%; left: 10%; }
+#about-window { width: 500px; height: 400px; top: 15%; left: 25%; }
+#projects-window { width: 600px; height: auto; max-height: 500px; top: 10%; left: 40%; }
+#vinyl-window { width: 400px; height: 450px; top: 10%; left: 50%; }
+
         
 .window-header { cursor: move; flex-shrink: 0; }
 .window-content { flex-grow: 1; overflow-y: auto; }
@@ -161,3 +168,42 @@ canvas{
     border: 2px solid #1f2937;
 }
 
+/* Mobile Orientation Overlay */
+#orientation-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    color: white;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#orientation-overlay .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Media Query for Mobile Portrait */
+@media screen and (max-width: 850px) and (orientation: portrait) {
+    #orientation-overlay {
+        display: flex;
+    }
+    #desktop, footer {
+        display: none;
+    }
+}
+
+/* Responsive adjustments for smaller screens (e.g., landscape tablets) */
+@media screen and (max-width: 1024px) {
+    #terminal-window { width: 80vw; height: 60vh; top: 5%; left: 5%; }
+    #about-window { width: 80vw; height: 60vh; top: 10%; left: 10%; }
+    #projects-window { width: 80vw; height: 70vh; top: 5%; left: 15%; }
+    #vinyl-window { width: 80vw; max-width: 400px; height: 70vh; top: 10%; left: 10%; }
+}
