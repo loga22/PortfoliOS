@@ -182,6 +182,7 @@ canvas{
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 1rem;
 }
 #orientation-overlay .content {
     display: flex;
@@ -189,21 +190,39 @@ canvas{
     align-items: center;
     gap: 1rem;
 }
+#orientation-overlay .disclaimer-text {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
 
 /* Media Query for Mobile Portrait */
 @media screen and (max-width: 850px) and (orientation: portrait) {
     #orientation-overlay {
         display: flex;
     }
-    #desktop, footer {
+    #desktop, footer, .window {
         display: none;
     }
 }
 
-/* Responsive adjustments for smaller screens (e.g., landscape tablets) */
+/* Responsive adjustments for smaller screens (e.g., landscape mobile/tablets) */
 @media screen and (max-width: 1024px) {
-    #terminal-window { width: 80vw; height: 60vh; top: 5%; left: 5%; }
-    #about-window { width: 80vw; height: 60vh; top: 10%; left: 10%; }
-    #projects-window { width: 80vw; height: 70vh; top: 5%; left: 15%; }
-    #vinyl-window { width: 80vw; max-width: 400px; height: 70vh; top: 10%; left: 10%; }
+    .terraria-taskbar {
+        height: 3rem; /* 48px */
+    }
+    .desktop-icon img {
+        width: 48px;
+        height: 48px;
+    }
+    .window {
+        resize: none; /* Disable resizing on touch devices */
+    }
+    .close-btn {
+        width: 24px;
+        height: 24px;
+    }
+    #terminal-window { width: 90vw; height: 75vh; top: 5%; left: 5%; }
+    #about-window { width: 90vw; height: 75vh; top: 5%; left: 5%; }
+    #projects-window { width: 90vw; height: 75vh; top: 5%; left: 5%; }
+    #vinyl-window { width: 90vw; max-width: 380px; height: auto; top: 5%; left: 5%; }
 }
