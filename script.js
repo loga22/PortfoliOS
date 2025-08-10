@@ -257,3 +257,7 @@ GitHub: github.com/loga22 <span class="copy-btn" data-copy="https://github.com/l
     });
 });
 });
+
+window.onload = function() {
+    document.body.style.visibility = 'visible';
+};
