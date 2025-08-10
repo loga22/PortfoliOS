@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio OS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+
+    <!-- Main Desktop Area -->
+    <main id="desktop" class="w-full h-screen p-4 pb-16">
+        <!-- Desktop Icons -->
+        <div class="flex flex-col items-start space-y-4">
+            <!-- Terminal Icon -->
+            <div class="desktop-icon text-center space-y-2" data-window="terminal-window" data-app-name="Terminal">
+                <div class="bg-gray/800/0 p-3 border-2 border-gray-600/0 hover:border-yellow-400 transition-colors cursor-pointer w-20 h-20 flex items-center justify-center">
+                    <img src="https://cdn.allthepics.net/images/2025/08/09/terminal-removebg-previewae44dcd1c4bf70ab.png" alt="Terminal Icon">
+                </div>
+                <p class="text-sm">Terminal</p>
+            </div>
+            <!-- About Me Icon -->
+            <div class="desktop-icon text-center space-y-2" data-window="about-window" data-app-name="About Me">
+                <div class="bg-gray/800/0 p-3 border-2 border-gray-600/0 hover:border-yellow-400 transition-colors cursor-pointer w-20 h-20 flex items-center justify-center">
+                    <img src="https://cdn.allthepics.net/images/2025/08/09/contact-removebg-preview3f7b4eb301803ded.png" alt="About Me Icon">
+                </div>
+                <p class="text-sm">About Me</p>
+            </div>
+            <!-- My Work Icon -->
+            <div class="desktop-icon text-center space-y-2" data-window="projects-window" data-app-name="My Work">
+                <div class="bg-gray/800/0 p-3 border-2 border-gray-600/0 hover:border-yellow-400 transition-colors cursor-pointer w-20 h-20 flex items-center justify-center">
+                   <img src="https://cdn.allthepics.net/images/2025/08/09/project-removebg-preview.png" alt="Projects Icon">
+                </div>
+                <p class="text-sm">My Work</p>
+            </div>
+            <!-- Vinyl Icon -->
+            <div class="desktop-icon text-center space-y-2" data-window="vinyl-window" data-app-name="Vinyl Player">
+                <div class="bg-gray/800/0 p-3 border-2 border-gray-600/0 hover:border-yellow-400 transition-colors cursor-pointer w-20 h-20 flex items-center justify-center">
+                    <img src="https://cdn.allthepics.net/images/2025/08/09/vinyl-removebg-preview.png" alt="Vinyl Player Icon">
+                </div>
+                <p class="text-sm">Vinyl Player</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Taskbar -->
+    <footer class="fixed bottom-0 left-0 right-0 h-16 terraria-taskbar flex items-center justify-end px-2 z-50">
+        <div class="bg-black/20 rounded-md p-1 border border-black/30 h-10 flex items-center">
+            <div id="clock" class="font-mono text-sm px-2"></div>
+        </div>
+    </footer>
+    
+    <!-- Window Templates -->
+    <div id="terminal-window" class="window hidden rounded-lg shadow-2xl glassmorphism" style="width: 550px; height: 350px; top: 15%; left: 10%;"><div class="window-header h-8 flex items-center justify-between px-3 bg-black/50 rounded-t-lg"><span class="font-bold text-sm">Terminal</span><div class="flex items-center space-x-2"><button class="close-btn w-4 h-4 bg-red-500 rounded-full hover:bg-red-600"></button></div></div><div class="window-content p-4 text-base font-vt323 text-green-400 bg-black/80 custom-scrollbar" onclick="document.getElementById('terminal-input').focus()"><div id="terminal-output"></div><div id="terminal-input-line" class="text-white"><span>></span><input type="text" id="terminal-input" class="ml-2" autofocus><span class="blinking-cursor">_</span></div></div></div>
+    
+    <div id="about-window" class="window hidden rounded-lg shadow-2xl glassmorphism" style="width: 500px; height: 400px; top: 15%; left: 25%;">
+        <div class="window-header h-8 flex items-center justify-between px-3 bg-black/20 rounded-t-lg">
+            <span class="font-bold text-sm">About Me</span>
+            <div class="flex items-center space-x-2">
+                <button class="close-btn w-4 h-4 bg-red-500 rounded-full hover:bg-red-600"></button>
+            </div>
+        </div>
+        <div class="window-content p-6 text-sm custom-scrollbar leading-relaxed">
+            <h2 class="text-2xl font-bold mb-4">Hi, I'm Logaranjan.</h2>
+            <p class="mb-4 text-justify">
+                I’m a mechanical engineering graduate who took an unexpected detour into the world of software. My journey into software began with Harvard’s CS50, which I took just to see what all the fuss was about, only to discover a new passion along the way. I found my niche in frontend development, enjoying its blend of logic and interactive design.
+            </p>
+            <p class="text-justify">
+                Since then, I’ve focused on applying my skills to build responsive and intuitive web applications. I enjoy blending thoughtful design with strong technical skills to deliver impactful web solutions. This site is a practical example of that philosophy, brought to life from design to code.
+            </p>
+        </div>
+    </div>
+
+    <div id="projects-window" class="window hidden rounded-lg shadow-2xl glassmorphism" style="width: 600px; height: auto; max-height: 500px; top: 10%; left: 40%;">
+        <div class="window-header h-8 flex items-center justify-between px-3 bg-black/20 rounded-t-lg">
+            <span class="font-bold text-sm">My Work</span>
+            <div class="flex items-center space-x-2">
+                <button class="close-btn w-4 h-4 bg-red-500 rounded-full hover:bg-red-600"></button>
+            </div>
+        </div>
+        <div class="window-content p-4 text-sm custom-scrollbar">
+            <div class="space-y-4" id="projects-list">
+                <div class="bg-white/10 p-4 rounded-lg">
+                    <h3 class="text-lg font-bold">Portfolio OS</h3>
+                    <p class="text-xs text-gray-300 mb-2">
+                        A dynamic, single-page portfolio built with vanilla JavaScript, HTML5, and Tailwind CSS to simulate a desktop operating system. Features include draggable and resizable windows, a functional terminal, and an interactive music player. The UI leverages the `particles.js` library for a dynamic background and custom CSS for unique glassmorphism and pixel-art-style components.
+                    </p>
+                    <a href="#" class="text-blue-400 hover:underline">View on GitHub &rarr;</a>
+                </div>
+                <div class="bg-white/10 p-4 rounded-lg">
+                    <h3 class="text-lg font-bold">Manufacturing & Supplier Analysis</h3>
+                    <p class="text-xs text-gray-300 mb-2">
+                        Developed during my internship at Schneider Electric, this Python script provides manufacturing cost analysis and supplier ranking. The project uses Pandas and Openpyxl to read production data from an Excel file, calculate the financial impact of part weight discrepancies, and rank suppliers based on these metrics. The script automates the entire process, appending the final analysis—including per-part cost differences and total monthly loss—back into the original spreadsheet for clear reporting and decision-making.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="vinyl-window" class="window hidden rounded-lg shadow-2xl glassmorphism" style="width: 400px; height: 450px; top: 10%; left: 50%;">
+        <div class="window-header h-8 flex items-center justify-between px-3 bg-black/20 rounded-t-lg">
+            <span class="font-bold text-sm">Vinyl Player</span>
+            <div class="flex items-center space-x-2">
+                <button class="close-btn w-4 h-4 bg-red-500 rounded-full hover:bg-red-600"></button>
+            </div>
+        </div>
+        <div class="window-content p-4 text-sm flex flex-col items-center justify-around custom-scrollbar">
+            <div id="vinyl-record" class="w-48 h-48">
+                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;">
+                    <rect width="64" height="64" fill="#111"/>
+                    <rect x="2" y="2" width="60" height="60" fill="#222"/>
+                    <rect x="4" y="4" width="56" height="56" fill="#111"/>
+                    <rect id="vinyl-label" x="24" y="24" width="16" height="16" fill="#DC2626"/>
+                    <rect id="vinyl-label-highlight" x="26" y="26" width="12" height="12" fill="#F87171"/>
+                </svg>
+            </div>
+            <div class="text-center">
+                <p id="vinyl-title" class="font-bold text-lg">Select a Song</p>
+                <p id="vinyl-artist" class="text-sm text-gray-400">Playlist</p>
+            </div>
+            <div class="w-full px-4 my-2 flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                <input id="volume-slider" type="range" min="0" max="100" value="50" class="w-full h-2 rounded-lg appearance-none cursor-pointer">
+            </div>
+            <div class="flex items-center space-x-8">
+                <button id="prev-btn" class="control-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+                </button>
+                <button id="play-pause-btn" class="control-btn w-12 h-12 flex items-center justify-center">
+                    <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    <svg id="pause-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+                </button>
+                <button id="next-btn" class="control-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <audio id="audio-player" src=""></audio>
+    
+    <!-- particles.js lib -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
