@@ -121,9 +121,9 @@ GitHub: github.com/loga22 <span class="copy-btn" data-copy="https://github.com/l
 
     // --- Vinyl Player Logic ---
     const songs = [
-        { title: 'Sweden', artist: 'C418', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/sweden.mp3', vinylColor: '#FFF176', vinylHighlight: '#FBC02D' },
-        { title: 'Lobby', artist: 'C418', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/main.mp3', vinylColor: '#81C784', vinylHighlight: '#2E7D32' },
-        { title: 'Pigstep', artist: 'Lena Raine', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/pigstep.mp3', vinylColor: '#EF5350', vinylHighlight: '#C62828' },
+        { title: 'Sweden', artist: 'C418', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/sweden.mp3', vinylColor: '#DC2626', vinylHighlight: '#F87171' },
+        { title: 'Mice on Venus', artist: 'C418', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/main.mp3', vinylColor: '#2563EB', vinylHighlight: '#60A5FA' },
+        { title: 'Pigstep', artist: 'Lena Raine', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/pigstep.mp3', vinylColor: '#16A34A', vinylHighlight: '#4ADE80' },
                   ];
 
     let currentSongIndex = 0;
@@ -261,4 +261,3 @@ GitHub: github.com/loga22 <span class="copy-btn" data-copy="https://github.com/l
 window.onload = function() {
     document.body.style.visibility = 'visible';
 };
-
