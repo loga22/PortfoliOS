@@ -214,7 +214,7 @@ GitHub: github.com/loga22 <span class="copy-btn" data-copy="https://github.com/l
         let clientX = touch ? touch.clientX : e.clientX;
         let clientY = touch ? touch.clientY : e.clientY;
         let newX = Math.max(0, Math.min(clientX - offsetX, window.innerWidth - activeWindow.offsetWidth));
-        let newY = Math.max(0, Math.min(clientY - offsetY, window.innerHeight - activeWindow.offsetHeight - 64));
+        let newY = Math.max(0, Math.min(clientY - offsetY, window.innerHeight - activeWindow.offsetHeight - 48)); // 48px is new taskbar height
         activeWindow.style.left = `${newX}px`;
         activeWindow.style.top = `${newY}px`;
     }
@@ -259,5 +259,5 @@ GitHub: github.com/loga22 <span class="copy-btn" data-copy="https://github.com/l
 });
 
 window.onload = function() {
-    document.body.style.visibility = 'visible';
+    document.body.classList.remove('loading');
 };

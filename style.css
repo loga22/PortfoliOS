@@ -9,8 +9,13 @@ body {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-    visibility: hidden; /* Hide body until fully loaded */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 } 
+
+body.loading {
+    opacity: 0;
+}
 
 canvas{ 
     display: block; 
@@ -23,11 +28,8 @@ canvas{
     top: 0;
     left: 0;
     z-index: 1;
-    background-color: #232741;
-    background-image: url("https://cdn.allthepics.net/images/2025/08/09/image-7.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: 50% 50%; /* Background layer */
+    background-color: #000000;
+    background-image: linear-gradient(to bottom, #020111, #191927);
 } 
         
 #desktop {
