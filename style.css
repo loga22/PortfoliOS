@@ -82,7 +82,7 @@ canvas{
     justify-content: center;
 }
 .desktop-icon:hover .icon-bg {
-    border-color: #fbbF24;
+    border-color: #ffffff;
 }
 
 .window-header { cursor: move; flex-shrink: 0; }
@@ -207,3 +207,4 @@ canvas{
     #projects-window { width: 90vw; height: 75vh; }
     #vinyl-window { width: 90vw; max-width: 380px; height: auto; }
 }
+
