@@ -12,14 +12,6 @@
 </head>
 <body class="loading">
 
-    <!-- Orientation Overlay for Mobile -->
-    <div id="orientation-overlay">
-        <div class="content">
-            <p class="disclaimer-text">This site is designed for desktops.</p>
-            <p>For the best mobile experience, please rotate your device to landscape mode.</p>
-        </div>
-    </div>
-
     <!-- particles.js container -->
     <div id="particles-js"></div>
 
@@ -29,29 +21,29 @@
         <div class="flex flex-col items-start space-y-4">
             <!-- Terminal Icon -->
             <div class="desktop-icon text-center space-y-2" data-window="terminal-window" data-app-name="Terminal">
-                <div class="bg-gray/800/0 p-3 border-2 border-gray-600/0 hover:border-yellow-400 transition-colors cursor-pointer w-20 h-20 flex items-center justify-center">
-                    <img src="https://cdn.allthepics.net/images/2025/08/09/terminal-removebg-previewae44dcd1c4bf70ab.png" alt="Terminal Icon">
+                <div class="icon-bg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg>
                 </div>
                 <p class="text-sm">Terminal</p>
             </div>
             <!-- About Me Icon -->
             <div class="desktop-icon text-center space-y-2" data-window="about-window" data-app-name="About Me">
-                <div class="bg-gray/800/0 p-3 border-2 border-gray-600/0 hover:border-yellow-400 transition-colors cursor-pointer w-20 h-20 flex items-center justify-center">
-                    <img src="https://cdn.allthepics.net/images/2025/08/09/contact-removebg-preview3f7b4eb301803ded.png" alt="About Me Icon">
+                <div class="icon-bg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                 </div>
                 <p class="text-sm">About Me</p>
             </div>
             <!-- My Work Icon -->
             <div class="desktop-icon text-center space-y-2" data-window="projects-window" data-app-name="My Work">
-                <div class="bg-gray/800/0 p-3 border-2 border-gray-600/0 hover:border-yellow-400 transition-colors cursor-pointer w-20 h-20 flex items-center justify-center">
-                   <img src="https://cdn.allthepics.net/images/2025/08/09/project-removebg-preview.png" alt="Projects Icon">
+                <div class="icon-bg">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
                 </div>
                 <p class="text-sm">My Work</p>
             </div>
             <!-- Vinyl Icon -->
             <div class="desktop-icon text-center space-y-2" data-window="vinyl-window" data-app-name="Vinyl Player">
-                <div class="bg-gray/800/0 p-3 border-2 border-gray-600/0 hover:border-yellow-400 transition-colors cursor-pointer w-20 h-20 flex items-center justify-center">
-                    <img src="https://cdn.allthepics.net/images/2025/08/09/vinyl-removebg-preview.png" alt="Vinyl Player Icon">
+                <div class="icon-bg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
                 </div>
                 <p class="text-sm">Vinyl Player</p>
             </div>
@@ -78,10 +70,10 @@
         <div class="window-content p-6 text-sm custom-scrollbar leading-relaxed">
             <h2 class="text-2xl font-bold mb-4">Hi, I'm Logaranjan.</h2>
             <p class="mb-4 text-justify">
-                I’m a mechanical engineering graduate who took an unexpected detour into the world of software. My journey into software began with Harvard’s CS50, which I took just to see what all the fuss was about, only to discover a new passion along the way. I found my niche in frontend development, enjoying its blend of logic and interactive design.
+                A mechanical engineering graduate, my path took an unexpected detour into the world of software. The journey into CS began with Harvard’s CS50—a course I took just to see what all the fuss was about, only to discover a new passion along the way.
             </p>
             <p class="text-justify">
-                Since then, I’ve focused on applying my skills to build responsive and intuitive web applications. I enjoy blending thoughtful design with strong technical skills to deliver impactful web solutions. This site is a practical example of that philosophy, brought to life from design to code.
+                Frontend development became my niche, largely because of its unique blend of logic and interactive design. My specialty is engineering frontends that are faithful to the design vision, translating visual mockups into pixel-perfect, intuitive web applications. This site itself is a practical example of that philosophy, brought to life from design to code.
             </p>
         </div>
     </div>
@@ -100,7 +92,7 @@
                     <p class="text-xs text-gray-300 mb-2">
                         A dynamic, single-page portfolio built with vanilla JavaScript, HTML5, and Tailwind CSS to simulate a desktop operating system. Features include draggable and resizable windows, a functional terminal, and an interactive music player. The UI leverages the `particles.js` library for a dynamic background and custom CSS for unique glassmorphism and pixel-art-style components.
                     </p>
-                    <a href="#" class="text-blue-400 hover:underline">View on GitHub &rarr;</a>
+                    <a href="https://github.com/loga22/PortfoliOS" class="text-blue-400 hover:underline">View on GitHub &rarr;</a>
                 </div>
                 <div class="bg-white/10 p-4 rounded-lg">
                     <h3 class="text-lg font-bold">Manufacturing & Supplier Analysis</h3>

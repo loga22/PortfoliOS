@@ -64,12 +64,27 @@ canvas{
 }
 
 /* Default Window Positions and Sizes */
-#terminal-window { width: 550px; height: 350px; top: 15%; left: 10%; }
-#about-window { width: 500px; height: 400px; top: 15%; left: 25%; }
-#projects-window { width: 600px; height: auto; max-height: 500px; top: 10%; left: 40%; }
-#vinyl-window { width: 400px; height: 450px; top: 10%; left: 50%; }
+#terminal-window { width: 550px; height: 350px; }
+#about-window { width: 500px; height: 400px; }
+#projects-window { width: 600px; height: auto; max-height: 500px; }
+#vinyl-window { width: 400px; height: 450px; }
 
-        
+.icon-bg {
+    background-color: rgba(55, 65, 81, 0);
+    padding: 0.75rem;
+    border: 2px solid rgba(107, 114, 128, 0);
+    transition: border-color 0.2s;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.desktop-icon:hover .icon-bg {
+    border-color: #fbbF24;
+}
+
 .window-header { cursor: move; flex-shrink: 0; }
 .window-content { flex-grow: 1; overflow-y: auto; }
 
@@ -170,51 +185,15 @@ canvas{
     border: 2px solid #1f2937;
 }
 
-/* Mobile Orientation Overlay */
-#orientation-overlay {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    color: white;
-    z-index: 100;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
-}
-#orientation-overlay .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-#orientation-overlay .disclaimer-text {
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-/* Media Query for Mobile Portrait */
-@media screen and (max-width: 850px) and (orientation: portrait) {
-    #orientation-overlay {
-        display: flex;
-    }
-    #desktop, footer, .window {
-        display: none;
-    }
-}
-
-/* Responsive adjustments for smaller screens (e.g., landscape mobile/tablets) */
+/* Responsive adjustments for smaller screens */
 @media screen and (max-width: 1024px) {
     .terraria-taskbar {
         height: 3rem; /* 48px */
     }
-    .desktop-icon img {
-        width: 48px;
-        height: 48px;
+    .desktop-icon .icon-bg {
+        width: 60px;
+        height: 60px;
+        padding: 0.5rem;
     }
     .window {
         resize: none; /* Disable resizing on touch devices */
@@ -223,8 +202,8 @@ canvas{
         width: 24px;
         height: 24px;
     }
-    #terminal-window { width: 90vw; height: 75vh; top: 5%; left: 5%; }
-    #about-window { width: 90vw; height: 75vh; top: 5%; left: 5%; }
-    #projects-window { width: 90vw; height: 75vh; top: 5%; left: 5%; }
-    #vinyl-window { width: 90vw; max-width: 380px; height: auto; top: 5%; left: 5%; }
+    #terminal-window { width: 90vw; height: 75vh; }
+    #about-window { width: 90vw; height: 75vh; }
+    #projects-window { width: 90vw; height: 75vh; }
+    #vinyl-window { width: 90vw; max-width: 380px; height: auto; }
 }

@@ -17,17 +17,33 @@ document.addEventListener('DOMContentLoaded', () => {
     function openWindow(windowId) {
         const windowElement = document.getElementById(windowId);
         if (!windowElement) return;
+
+        // Make window visible to calculate its dimensions
         windowElement.classList.remove('hidden');
+        
+        const windowWidth = windowElement.offsetWidth;
+        const windowHeight = windowElement.offsetHeight;
+
+        // Calculate center position
+        const top = Math.max(0, (window.innerHeight - windowHeight) / 2);
+        const left = Math.max(0, (window.innerWidth - windowWidth) / 2);
+
+        // Apply position
+        windowElement.style.top = `${top}px`;
+        windowElement.style.left = `${left}px`;
+        
         highestZIndex++;
         windowElement.style.zIndex = highestZIndex;
     }
 
     desktopIcons.forEach(icon => {
-        icon.addEventListener('click', () => openWindow(icon.dataset.window));
+        const openAction = () => openWindow(icon.dataset.window);
+        icon.addEventListener('click', openAction);
+        icon.addEventListener('touchstart', openAction);
     });
 
     document.querySelectorAll('.close-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
+        const closeAction = (e) => {
             e.stopPropagation();
             const window = btn.closest('.window');
             window.classList.add('hidden');
@@ -35,7 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.id === 'vinyl-window') {
                 pauseSong();
             }
-        });
+        };
+        btn.addEventListener('click', closeAction);
+        btn.addEventListener('touchstart', closeAction);
     });
 
     // --- Terminal Logic ---
@@ -121,9 +139,9 @@ GitHub: github.com/loga22 <span class="copy-btn" data-copy="https://github.com/l
 
     // --- Vinyl Player Logic ---
     const songs = [
-        { title: 'Sweden', artist: 'C418', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/sweden.mp3', vinylColor: '#DC2626', vinylHighlight: '#F87171' },
-        { title: 'Mice on Venus', artist: 'C418', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/main.mp3', vinylColor: '#2563EB', vinylHighlight: '#60A5FA' },
-        { title: 'Pigstep', artist: 'Lena Raine', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/pigstep.mp3', vinylColor: '#16A34A', vinylHighlight: '#4ADE80' },
+        { title: 'Sweden', artist: 'C418', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/sweden.mp3', vinylColor: '#90EE90', vinylHighlight: '#006400' },
+        { title: 'Lobby', artist: 'C418', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/main.mp3', vinylColor: '#FFFACD', vinylHighlight: '#B38600' },
+        { title: 'Pigstep', artist: 'Lena Raine', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/pigstep.mp3', vinylColor: '#FF6347', vinylHighlight: '#8B0000' },
                   ];
 
     let currentSongIndex = 0;
