@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PortfoliOS</title>
+    <title>Portfolio OS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Orientation Overlay for Mobile -->
+    <div id="orientation-overlay">
+        <div class="content">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-1.157-1.229L3.374 12.127a1 1 0 0 0 .143 1.907l2.843.71a1 1 0 0 1 .83.83l.71 2.843a1 1 0 0 0 1.907.143l6.544-17.642a1 1 0 0 0-1.229-1.157Z"/></svg>
+            <p>Please rotate your device to landscape mode for the best experience.</p>
+        </div>
+    </div>
 
     <!-- particles.js container -->
     <div id="particles-js"></div>
@@ -58,9 +66,9 @@
     </footer>
     
     <!-- Window Templates -->
-    <div id="terminal-window" class="window hidden rounded-lg shadow-2xl glassmorphism" style="width: 550px; height: 350px; top: 15%; left: 10%;"><div class="window-header h-8 flex items-center justify-between px-3 bg-black/50 rounded-t-lg"><span class="font-bold text-sm">Terminal</span><div class="flex items-center space-x-2"><button class="close-btn w-4 h-4 bg-red-500 rounded-full hover:bg-red-600"></button></div></div><div class="window-content p-4 text-base font-vt323 text-green-400 bg-black/80 custom-scrollbar" onclick="document.getElementById('terminal-input').focus()"><div id="terminal-output"></div><div id="terminal-input-line" class="text-white"><span>></span><input type="text" id="terminal-input" class="ml-2" autofocus><span class="blinking-cursor">_</span></div></div></div>
+    <div id="terminal-window" class="window hidden rounded-lg shadow-2xl glassmorphism"><div class="window-header h-8 flex items-center justify-between px-3 bg-black/50 rounded-t-lg"><span class="font-bold text-sm">Terminal</span><div class="flex items-center space-x-2"><button class="close-btn w-4 h-4 bg-red-500 rounded-full hover:bg-red-600"></button></div></div><div class="window-content p-4 text-base font-vt323 text-green-400 bg-black/80 custom-scrollbar" onclick="document.getElementById('terminal-input').focus()"><div id="terminal-output"></div><div id="terminal-input-line" class="text-white"><span>></span><input type="text" id="terminal-input" class="ml-2" autofocus><span class="blinking-cursor">_</span></div></div></div>
     
-    <div id="about-window" class="window hidden rounded-lg shadow-2xl glassmorphism" style="width: 500px; height: 400px; top: 15%; left: 25%;">
+    <div id="about-window" class="window hidden rounded-lg shadow-2xl glassmorphism">
         <div class="window-header h-8 flex items-center justify-between px-3 bg-black/20 rounded-t-lg">
             <span class="font-bold text-sm">About Me</span>
             <div class="flex items-center space-x-2">
@@ -78,7 +86,7 @@
         </div>
     </div>
 
-    <div id="projects-window" class="window hidden rounded-lg shadow-2xl glassmorphism" style="width: 600px; height: auto; max-height: 500px; top: 10%; left: 40%;">
+    <div id="projects-window" class="window hidden rounded-lg shadow-2xl glassmorphism">
         <div class="window-header h-8 flex items-center justify-between px-3 bg-black/20 rounded-t-lg">
             <span class="font-bold text-sm">My Work</span>
             <div class="flex items-center space-x-2">
@@ -92,7 +100,7 @@
                     <p class="text-xs text-gray-300 mb-2">
                         A dynamic, single-page portfolio built with vanilla JavaScript, HTML5, and Tailwind CSS to simulate a desktop operating system. Features include draggable and resizable windows, a functional terminal, and an interactive music player. The UI leverages the `particles.js` library for a dynamic background and custom CSS for unique glassmorphism and pixel-art-style components.
                     </p>
-                    <a href="https://github.com/loga22/PortfoliOS" class="text-blue-400 hover:underline">View on GitHub &rarr;</a>
+                    <a href="#" class="text-blue-400 hover:underline">View on GitHub &rarr;</a>
                 </div>
                 <div class="bg-white/10 p-4 rounded-lg">
                     <h3 class="text-lg font-bold">Manufacturing & Supplier Analysis</h3>
@@ -104,7 +112,7 @@
         </div>
     </div>
     
-    <div id="vinyl-window" class="window hidden rounded-lg shadow-2xl glassmorphism" style="width: 400px; height: 450px; top: 10%; left: 50%;">
+    <div id="vinyl-window" class="window hidden rounded-lg shadow-2xl glassmorphism">
         <div class="window-header h-8 flex items-center justify-between px-3 bg-black/20 rounded-t-lg">
             <span class="font-bold text-sm">Vinyl Player</span>
             <div class="flex items-center space-x-2">
@@ -150,5 +158,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
