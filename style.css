@@ -219,8 +219,10 @@ canvas{
         width: 24px;
         height: 24px;
     }
-    #terminal-window { width: 90vw; height: 75vh; }
-    #about-window { width: 90vw; height: 75vh; }
-    #projects-window { width: 90vw; height: 75vh; }
+    
+    #terminal-window { width: 90vw; height: auto; max-height: 75vh; }
+    #about-window { width: 90vw; height: auto; max-height: 75vh; }
+    #projects-window { width: 90vw; height: auto; max-height: 75vh; }
     #vinyl-window { width: 90vw; max-width: 380px; height: auto; }
 }
+
