@@ -91,6 +91,7 @@
             </button>
             <div class="flex flex-col items-center justify-center flex-grow mx-0.5 h-full">
                 <div id="project-display" class="w-full h-full flex items-center justify-center">
+
                     <div class="project-card bg-transparent p-4 rounded-lg">
                         <h3 class="text-xl font-bold mb-4">PortfoliOS</h3>
                         <p class="mb-4 text-justify text-sm">
@@ -98,18 +99,21 @@
                         </p>
                         <a href="https://loga22.github.io/PortfoliOS" class="text-blue-400 hover:underline">View on GitHub &rarr;</a>
                     </div>
+
+                    <div class="project-card bg-transparent p-4 rounded-lg">
+                        <h3 class="text-xl font-bold mb-4">Autonomous Drone integrating AI for Object Detection</h3>
+                        <p class="mb-4 text-justify text-sm">
+                            Developed as a final year project, this system is a computer vision-guided autonomous tracking system for drones. It utilizes a ground run YOLOv5 model for real-time person detection from a live video feed. A Python control loop processes this data, calculating proportional control outputs for yaw, pitch, and throttle. These commands are sent as MAVLink RC overrides via DroneKit, enabling the drone to actively track its target. The core logic operates as a finite state machine, managing states for target acquisition, tracking, and occlusion handling.                        </p>
+                        <a href="https://github.com/loga22/Autonomous-Drone-integrating-AI-for-Object-Detection" class="text-blue-400 hover:underline">View on GitHub &rarr;</a>
+                    </div>
+
                     <div class="project-card bg-transparent p-4 rounded-lg hidden">
                         <h3 class="text-xl font-bold mb-4">Manufacturing & Supplier Analysis</h3>
                         <p class="mb-4 text-justify text-sm">
                             Developed during my internship at Schneider Electric, this Python script provides manufacturing cost analysis and supplier ranking. The project uses Pandas and Openpyxl to read production data from an Excel file, calculate the financial impact of part weight discrepancies, and rank suppliers based on these metrics. The script automates the entire process, appending the final analysis—including per-part cost differences and total monthly loss—back into the original spreadsheet for clear reporting and decision-making.
                         </p>
                     </div>
-                    <div class="project-card bg-transparent p-4 rounded-lg">
-                        <h3 class="text-xl font-bold mb-4">Autonomous Drone integrating AI for Object Detection</h3>
-                        <p class="mb-4 text-justify text-sm">
-                            Developed as a final year project, this system is a computer vision-guided autonomous tracking system for drones. It utilizes a ground run YOLOv5 model for real-time person detection from a live video feed. A Python control loop processes this data, calculating proportional control outputs for yaw, pitch, and throttle. These commands are sent as MAVLink RC overrides via DroneKit, enabling the drone to actively track its target. The core logic operates as a finite state machine, managing states for target acquisition, tracking, and occlusion handling.                        </p>
-                        <a href="https://loga22.github.io/PortfoliOS" class="text-blue-400 hover:underline">View on GitHub &rarr;</a>
-                    </div>
+
                 </div>
                 <div id="project-page-number" class="mt-2 text-xs text-gray-400"></div>
             </div>
@@ -165,4 +169,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
