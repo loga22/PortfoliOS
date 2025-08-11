@@ -19,7 +19,6 @@ body.loading {
 
 canvas{ 
     display: block; 
-    vertical-align: bottom; 
 } 
 #particles-js{ 
     position:absolute; 
@@ -193,9 +192,9 @@ canvas{
 
 /* Project Navigation Styles */
 .project-nav-btn {
-    background-color: rgba(255, 255, 255, 0.1);
+    
     border-radius: 50%;
-    padding: 0.5rem;
+    padding: 0.1rem;
     transition: background-color 0.2s;
 }
 .project-nav-btn:hover {
@@ -219,10 +218,8 @@ canvas{
         width: 24px;
         height: 24px;
     }
-    
     #terminal-window { width: 90vw; height: auto; max-height: 75vh; }
     #about-window { width: 90vw; height: auto; max-height: 75vh; }
     #projects-window { width: 90vw; height: auto; max-height: 75vh; }
     #vinyl-window { width: 90vw; max-width: 380px; height: auto; }
 }
-
