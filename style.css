@@ -53,6 +53,11 @@ canvas{
 
 .font-vt323 { font-family: 'VT323', monospace; }
 
+.terminal-font {
+    font-family: 'JetBrains Mono', monospace;
+    font-style: italic;
+}
+
 .window {
     position: absolute;
     resize: both;
@@ -65,7 +70,7 @@ canvas{
 
 /* Default Window Positions and Sizes */
 #terminal-window { width: 550px; height: 350px; }
-#about-window { width: 500px; height: 400px; }
+#about-window { width: 500px; height: 350px; }
 #projects-window { width: 600px; height: auto; max-height: 500px; }
 #vinyl-window { width: 400px; height: 450px; }
 
@@ -80,9 +85,10 @@ canvas{
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 20%;
 }
 .desktop-icon:hover .icon-bg {
-    border-color: #444444;
+    border-color: #888888;
 }
 
 .window-header { cursor: move; flex-shrink: 0; }
@@ -185,6 +191,17 @@ canvas{
     border: 2px solid #1f2937;
 }
 
+/* Project Navigation Styles */
+.project-nav-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    padding: 0.5rem;
+    transition: background-color 0.2s;
+}
+.project-nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 1024px) {
     .terraria-taskbar {
@@ -207,5 +224,3 @@ canvas{
     #projects-window { width: 90vw; height: 75vh; }
     #vinyl-window { width: 90vw; max-width: 380px; height: auto; }
 }
-
-

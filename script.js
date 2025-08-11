@@ -37,7 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     desktopIcons.forEach(icon => {
-        const openAction = () => openWindow(icon.dataset.window);
+        const openAction = () => {
+            const windowId = icon.dataset.window;
+            openWindow(windowId);
+            if (windowId === 'projects-window') {
+                currentProjectIndex = 0;
+                showProject(0);
+            }
+        };
         icon.addEventListener('click', openAction);
         icon.addEventListener('touchstart', openAction);
     });
@@ -60,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const terminalOutput = document.getElementById('terminal-output');
     const terminalInput = document.getElementById('terminal-input');
     const terminalWindowContent = terminalOutput.parentElement; // Correctly target the scrollable container
-    const welcomeMessage = `<span>Welcome to PortfolioOS v2.0\n</span><span>Type 'help' to see available commands.\n\n</span>`;
+    const welcomeMessage = `<span>Welcome to PortfoliOS v2.0\n</span><span>Type 'help' to see available commands.\n\n</span>`;
     terminalOutput.innerHTML = welcomeMessage;
 
     terminalInput.addEventListener('keydown', function(event) {
@@ -139,9 +146,9 @@ GitHub: github.com/loga22 <span class="copy-btn" data-copy="https://github.com/l
 
     // --- Vinyl Player Logic ---
     const songs = [
-        { title: 'Sweden', artist: 'C418', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/sweden.mp3', vinylColor: '#90EE90', vinylHighlight: '#006400' },
-        { title: 'Lobby', artist: 'C418', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/main.mp3', vinylColor: '#FFFACD', vinylHighlight: '#B38600' },
-        { title: 'Pigstep', artist: 'Lena Raine', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/pigstep.mp3', vinylColor: '#FF6347', vinylHighlight: '#8B0000' },
+        { title: 'Sweden', artist: 'C418', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/sweden.mp3', vinylColor: '#FFC300', vinylHighlight: '#111111' },
+        { title: 'Lobby', artist: 'C418', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/main.mp3', vinylColor: '#16A34A', vinylHighlight: '#111111' },
+        { title: 'Pigstep', artist: 'Lena Raine', url: 'https://raw.githubusercontent.com/logaserv/vinylplayer/main/pigstep.mp3', vinylColor: '#DC2626', vinylHighlight: '#111111' },
                   ];
 
     let currentSongIndex = 0;
@@ -207,6 +214,45 @@ GitHub: github.com/loga22 <span class="copy-btn" data-copy="https://github.com/l
     // Initial Load
     loadSong(currentSongIndex);
     setVolume();
+
+
+    // --- Projects Logic ---
+    const prevProjectBtn = document.getElementById('prev-project-btn');
+    const nextProjectBtn = document.getElementById('next-project-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    const projectPageNumber = document.getElementById('project-page-number');
+    let currentProjectIndex = 0;
+
+    function showProject(index) {
+        projectCards.forEach((card, i) => {
+            if (i === index) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+        projectPageNumber.textContent = `${index + 1} / ${projectCards.length}`;
+    }
+
+    function nextProject() {
+        currentProjectIndex = (currentProjectIndex + 1) % projectCards.length;
+        showProject(currentProjectIndex);
+    }
+
+    function prevProject() {
+        currentProjectIndex = (currentProjectIndex - 1 + projectCards.length) % projectCards.length;
+        showProject(currentProjectIndex);
+    }
+
+    prevProjectBtn.addEventListener('click', prevProject);
+    nextProjectBtn.addEventListener('click', nextProject);
+    prevProjectBtn.addEventListener('touchstart', prevProject);
+    nextProjectBtn.addEventListener('touchstart', nextProject);
+
+    // Show the first project initially
+    if (projectCards.length > 0) {
+        showProject(0);
+    }
 
 
     // --- Draggable Windows ---

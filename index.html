@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio OS</title>
+    <title>PortfoliOS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:ital@1&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="loading">
@@ -58,7 +58,7 @@
     </footer>
     
     <!-- Window Templates -->
-    <div id="terminal-window" class="window hidden rounded-lg shadow-2xl glassmorphism"><div class="window-header h-8 flex items-center justify-between px-3 bg-black/50 rounded-t-lg"><span class="font-bold text-sm">Terminal</span><div class="flex items-center space-x-2"><button class="close-btn w-4 h-4 bg-red-500 rounded-full hover:bg-red-600"></button></div></div><div class="window-content p-4 text-base font-vt323 text-green-400 bg-black/80 custom-scrollbar" onclick="document.getElementById('terminal-input').focus()"><div id="terminal-output"></div><div id="terminal-input-line" class="text-white"><span>></span><input type="text" id="terminal-input" class="ml-2" autofocus><span class="blinking-cursor">_</span></div></div></div>
+    <div id="terminal-window" class="window hidden rounded-lg shadow-2xl glassmorphism"><div class="window-header h-8 flex items-center justify-between px-3 bg-black/50 rounded-t-lg"><span class="font-bold text-sm">Terminal</span><div class="flex items-center space-x-2"><button class="close-btn w-4 h-4 bg-red-500 rounded-full hover:bg-red-600"></button></div></div><div class="window-content p-4 text-base terminal-font text-green-400 bg-black/80 custom-scrollbar" onclick="document.getElementById('terminal-input').focus()"><div id="terminal-output"></div><div id="terminal-input-line" class="text-white"><span>></span><input type="text" id="terminal-input" class="ml-2" autofocus><span class="blinking-cursor">_</span></div></div></div>
     
     <div id="about-window" class="window hidden rounded-lg shadow-2xl glassmorphism">
         <div class="window-header h-8 flex items-center justify-between px-3 bg-black/20 rounded-t-lg">
@@ -67,12 +67,12 @@
                 <button class="close-btn w-4 h-4 bg-red-500 rounded-full hover:bg-red-600"></button>
             </div>
         </div>
-        <div class="window-content p-6 text-sm custom-scrollbar leading-relaxed">
-            <h2 class="text-2xl font-bold mb-4">Hi, I'm Logaranjan.</h2>
-            <p class="mb-4 text-justify">
+        <div class="window-content p-6 custom-scrollbar leading-relaxed">
+            <h2 class="text-xl font-bold mb-4">Hi, I'm Logaranjan.</h2>
+            <p class="mb-4 text-justify text-sm">
                 A mechanical engineering graduate, my path took an unexpected detour into the world of software. The journey into CS began with Harvard’s CS50—a course I took just to see what all the fuss was about, only to discover a new passion along the way.
             </p>
-            <p class="text-justify">
+            <p class="text-justify text-sm">
                 Frontend development became my niche, largely because of its unique blend of logic and interactive design. My specialty is engineering frontends that are faithful to the design vision, translating visual mockups into pixel-perfect, intuitive web applications. This site itself is a practical example of that philosophy, brought to life from design to code.
             </p>
         </div>
@@ -85,22 +85,31 @@
                 <button class="close-btn w-4 h-4 bg-red-500 rounded-full hover:bg-red-600"></button>
             </div>
         </div>
-        <div class="window-content p-4 text-sm custom-scrollbar">
-            <div class="space-y-4" id="projects-list">
-                <div class="bg-white/10 p-4 rounded-lg">
-                    <h3 class="text-lg font-bold">Portfolio OS</h3>
-                    <p class="text-xs text-gray-300 mb-2">
-                        A dynamic, single-page portfolio built with vanilla JavaScript, HTML5, and Tailwind CSS to simulate a desktop operating system. Features include draggable and resizable windows, a functional terminal, and an interactive music player. The UI leverages the `particles.js` library for a dynamic background and custom CSS for unique glassmorphism and pixel-art-style components.
-                    </p>
-                    <a href="https://github.com/loga22/PortfoliOS" class="text-blue-400 hover:underline">View on GitHub &rarr;</a>
+        <div class="window-content p-4 text-sm custom-scrollbar flex items-center justify-between">
+            <button id="prev-project-btn" class="project-nav-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <div class="flex flex-col items-center justify-center flex-grow mx-4 h-full">
+                <div id="project-display" class="w-full h-full flex items-center justify-center">
+                    <div class="project-card bg-transparent p-4 rounded-lg">
+                        <h3 class="text-xl font-bold mb-4">PortfoliOS</h3>
+                        <p class="mb-4 text-justify text-sm">
+                            A dynamic, single-page portfolio built with vanilla JavaScript, HTML5, and Tailwind CSS to simulate a desktop operating system. Features include draggable windows, a functional terminal, and an interactive music player. The UI leverages the `particles.js` library for a dynamic background and custom CSS for unique glassmorphism and pixel-art-style components.
+                        </p>
+                        <a href="https://loga22.github.io/PortfoliOS" class="text-blue-400 hover:underline">View on GitHub &rarr;</a>
+                    </div>
+                    <div class="project-card bg-transparent p-4 rounded-lg hidden">
+                        <h3 class="text-xl font-bold mb-4">Manufacturing & Supplier Analysis</h3>
+                        <p class="mb-4 text-justify text-sm">
+                            Developed during my internship at Schneider Electric, this Python script provides manufacturing cost analysis and supplier ranking. The project uses Pandas and Openpyxl to read production data from an Excel file, calculate the financial impact of part weight discrepancies, and rank suppliers based on these metrics. The script automates the entire process, appending the final analysis—including per-part cost differences and total monthly loss—back into the original spreadsheet for clear reporting and decision-making.
+                        </p>
+                    </div>
                 </div>
-                <div class="bg-white/10 p-4 rounded-lg">
-                    <h3 class="text-lg font-bold">Manufacturing & Supplier Analysis</h3>
-                    <p class="text-xs text-gray-300 mb-2">
-                        Developed during my internship at Schneider Electric, this Python script provides manufacturing cost analysis and supplier ranking. The project uses Pandas and Openpyxl to read production data from an Excel file, calculate the financial impact of part weight discrepancies, and rank suppliers based on these metrics. The script automates the entire process, appending the final analysis—including per-part cost differences and total monthly loss—back into the original spreadsheet for clear reporting and decision-making.
-                    </p>
-                </div>
+                <div id="project-page-number" class="mt-2 text-xs text-gray-400"></div>
             </div>
+            <button id="next-project-btn" class="project-nav-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
         </div>
     </div>
     
